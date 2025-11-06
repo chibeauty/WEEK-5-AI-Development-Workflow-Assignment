@@ -1,4 +1,4 @@
-## 1. Problem Definition (6 points)
+## 1. Problem Definition 
 
 - **Problem**: Predicting student dropout risk within the next academic term.
 - **Objectives (3)**:
@@ -11,7 +11,7 @@
 - **KPI (1)**:
   - Term-to-term retention uplift (% increase vs. baseline control group).
 
-## 2. Data Collection & Preprocessing (8 points)
+## 2. Data Collection & Preprocessing 
 
 - **Data Sources (2)**:
   - Learning Management System (LMS) activity logs (logins, assignment submissions, forum activity).
@@ -23,7 +23,7 @@
   - Normalize/standardize continuous variables and winsorize extreme outliers.
   - Aggregate temporal LMS events into weekly features (e.g., submissions/week) and align to a common observation window.
 
-## 3. Model Development (8 points)
+## 3. Model Development 
 
 - **Chosen Model + Justification**:
   - Gradient Boosted Trees (e.g., XGBoost/LightGBM): strong performance on tabular, heterogeneous features; handles non-linearities and feature interactions; robust to missing values; offers feature importance for interpretability.
@@ -33,7 +33,7 @@
   - max_depth / num_leaves: controls model complexity and overfitting.
   - learning_rate: balances step size vs. number of trees, affecting generalization and convergence.
 
-## 4. Evaluation & Deployment (8 points)
+## 4. Evaluation & Deployment 
 
 - **Evaluation Metrics (2) + Relevance**:
   - AUC-PR: better reflects performance on imbalanced dropout labels; emphasizes precision/recall trade-off.
@@ -42,5 +42,6 @@
   - Concept drift: the relationship between features and dropout changes over time (e.g., policy or curriculum changes). Monitor via population stability index (PSI) on key features/scores, drift detectors on prediction residuals, and periodic backtesting; set triggers for retraining/calibration.
 - **Deployment Challenge (1)**:
   - Scalability for near-real-time scoring as LMS events stream in; address with message queues/stream processing (e.g., Kafka), stateless inference services with autoscaling, and batched feature computation to keep latency low.
+
 
 
