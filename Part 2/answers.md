@@ -1,11 +1,11 @@
-## Part 2: Case Study Application (40 points)
+## Part 2: Case Study Application 
 
 ### Scenario
 A hospital wants an AI system to predict patient readmission risk within 30 days of discharge.
 
 ---
 
-## 1) Problem Scope (5 points)
+## 1) Problem Scope 
 
 - **Problem**: Predict the likelihood that a discharged patient will be readmitted within 30 days.
 - **Objectives**:
@@ -19,7 +19,7 @@ A hospital wants an AI system to predict patient readmission risk within 30 days
 
 ---
 
-## 2) Data Strategy (10 points)
+## 2) Data Strategy 
 
 - **Proposed Data Sources**:
   - Electronic Health Records (EHR): diagnoses (ICD), procedures (CPT), problem lists, vitals, labs, medications, allergies, length of stay, discharge summaries.
@@ -39,7 +39,7 @@ A hospital wants an AI system to predict patient readmission risk within 30 days
 
 ---
 
-## 3) Model Development (10 points)
+## 3) Model Development 
 
 - **Selected Model & Justification**:
   - Gradient Boosted Trees (e.g., XGBoost/LightGBM): strong performance on tabular clinical data, handles non-linearities and mixed feature types, robust to missingness, offers feature importance and supports calibrated probabilities.
@@ -55,7 +55,7 @@ A hospital wants an AI system to predict patient readmission risk within 30 days
 
 ---
 
-## 4) Deployment (10 points)
+## 4) Deployment 
 
 - **Integration Steps**:
   - Feature pipeline: nightly (batch) and on-demand (near real-time) feature computation from EHR via HL7/FHIR interfaces.
@@ -71,9 +71,10 @@ A hospital wants an AI system to predict patient readmission risk within 30 days
 
 ---
 
-## 5) Optimization (5 points)
+## 5) Optimization 
 
 - **Method to Address Overfitting**:
   - Early stopping with time-aware validation (train on earlier encounters, validate on later periods) to halt boosting when generalization degrades; combine with L2 regularization and tree depth limits.
+
 
 
